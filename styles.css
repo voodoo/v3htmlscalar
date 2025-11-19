@@ -317,6 +317,18 @@ body {
     justify-content: center;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+}
+
+.carousel-slide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 10, 10, 0.6);
+    z-index: 1;
 }
 
 .carousel-slide.active {
@@ -340,7 +352,7 @@ body {
     color: var(--text-primary);
     max-width: 900px;
     padding: 0 20px;
-    z-index: 2;
+    z-index: 3;
     position: relative;
 }
 
@@ -567,14 +579,19 @@ body {
 }
 
 .gift-image {
-    font-size: 28px;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
     margin-bottom: 18px;
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.gift-item:hover .gift-image {
+    transform: scale(1.05);
+    border-color: var(--secondary-color);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
 }
 
 .gift-item p {
@@ -741,34 +758,37 @@ body {
 .product-image {
     width: 100%;
     height: 220px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    object-fit: cover;
     border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text-secondary);
     margin-bottom: 24px;
     border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
+    transition: all 0.4s ease;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
 }
 
 .product-image::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-    animation: rotate 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
 }
 
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.product-card:hover .product-image::before {
+    opacity: 1;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+    border-color: var(--secondary-color);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
 }
 
 .product-card h3 {
@@ -935,6 +955,22 @@ body {
     overflow: hidden;
 }
 
+.step-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.step-item:hover .step-image {
+    transform: scale(1.05);
+    border-color: var(--secondary-color);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
 .step-item::before {
     content: '';
     position: absolute;
@@ -1060,20 +1096,17 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+    object-fit: cover;
     margin: 0 auto 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    color: var(--text-secondary);
     border: 3px solid var(--border-color);
     transition: all 0.3s ease;
+    display: block;
 }
 
 .testimonial-card:hover .testimonial-image {
     border-color: var(--secondary-color);
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    transform: scale(1.1);
 }
 
 .testimonial-card h4 {
@@ -1284,6 +1317,22 @@ body {
     border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
+}
+
+.opportunity-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.opportunity-card:hover .opportunity-image {
+    transform: scale(1.05);
+    border-color: var(--secondary-color);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
 }
 
 .opportunity-card::before {
