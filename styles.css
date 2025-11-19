@@ -47,6 +47,8 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
+    display: block;
 }
 
 .nav-container {
@@ -56,13 +58,35 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 70px;
     height: 70px;
+    gap: 20px;
+    flex-wrap: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nav-container > * {
+    box-sizing: border-box;
+}
+
+.nav-container .nav-menu {
+    order: 2;
+}
+
+.nav-container .nav-left {
+    order: 1;
+}
+
+.nav-container .nav-right {
+    order: 3;
 }
 
 .nav-left {
     display: flex;
     align-items: center;
     gap: 20px;
+    flex-shrink: 0;
 }
 
 .menu-toggle {
@@ -92,81 +116,67 @@ body {
 }
 
 .nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 30px;
+    display: flex !important;
+    list-style: none !important;
+    gap: 15px;
     align-items: center;
-    flex: 1;
+    flex: 1 1 auto;
     justify-content: center;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: auto;
+    min-width: 400px;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    position: static !important;
+    height: auto;
+}
+
+.nav-menu::-webkit-scrollbar {
+    display: none;
 }
 
 .nav-item {
     position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-shrink: 0;
+    display: block;
+    visibility: visible;
 }
 
 .nav-link {
     color: var(--text-dark);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     transition: color 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    display: inline-block;
+    white-space: nowrap;
+    padding: 8px 4px;
+    line-height: 1.5;
+    visibility: visible;
+    opacity: 1;
 }
 
 .nav-link:hover {
     color: var(--secondary-color);
 }
 
-.dropdown-arrow {
-    font-size: 10px;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    list-style: none;
-    min-width: 250px;
-    padding: 10px 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s;
-    z-index: 100;
-}
-
-.nav-item:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-menu li {
-    padding: 0;
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 12px 20px;
-    color: var(--text-dark);
-    text-decoration: none;
-    font-size: 14px;
-    transition: background 0.3s;
-}
-
-.dropdown-menu a:hover {
-    background: var(--bg-light);
-    color: var(--secondary-color);
-}
 
 .nav-right {
     display: flex;
     align-items: center;
     gap: 15px;
+    flex-shrink: 0;
+    margin-left: auto;
 }
 
 .search-btn {
@@ -849,6 +859,40 @@ body {
     color: rgba(255, 255, 255, 0.6);
 }
 
+/* Desktop - Ensure navigation is visible */
+@media (min-width: 769px) {
+    .nav-menu {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: none !important;
+        position: static !important;
+    }
+    
+    .nav-item {
+        display: block !important;
+        visibility: visible !important;
+    }
+    
+    .nav-link {
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
+/* Tablet and Medium Screens */
+@media (max-width: 1200px) and (min-width: 769px) {
+    .nav-menu {
+        gap: 12px;
+    }
+    
+    .nav-link {
+        font-size: 12px;
+        padding: 8px 3px;
+    }
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .menu-toggle {
@@ -869,6 +913,10 @@ body {
         transition: transform 0.3s;
         max-height: calc(100vh - 70px);
         overflow-y: auto;
+        gap: 0;
+        overflow-x: visible;
+        visibility: visible;
+        opacity: 1;
     }
 
     .nav-menu.active {
@@ -877,15 +925,6 @@ body {
 
     .nav-item {
         width: 100%;
-    }
-
-    .dropdown-menu {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        padding-left: 20px;
     }
 
     .hero-content h1 {
