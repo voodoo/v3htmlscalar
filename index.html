@@ -3,681 +3,417 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scalar Technologies - Defining the Future</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #3b82f6;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f9fafb;
-            --bg-white: #ffffff;
-            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 8rem 2rem 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: white;
-            color: var(--primary-color);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: var(--primary-color);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 6rem 2rem;
-            background: var(--bg-white);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        .section-header p {
-            font-size: 1.125rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: var(--bg-light);
-            padding: 2.5rem;
-            border-radius: 12px;
-            transition: all 0.3s;
-            border: 1px solid transparent;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-color: var(--accent-color);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        .feature-card p {
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        /* Solutions Section */
-        .solutions {
-            padding: 6rem 2rem;
-            background: var(--bg-light);
-        }
-
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .solution-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s;
-        }
-
-        .solution-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .solution-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-dark);
-        }
-
-        .solution-card ul {
-            list-style: none;
-            color: var(--text-light);
-        }
-
-        .solution-card ul li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .solution-card ul li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* Stats Section */
-        .stats {
-            padding: 4rem 2rem;
-            background: var(--gradient);
-            color: white;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-item p {
-            font-size: 1.125rem;
-            opacity: 0.9;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 6rem 2rem;
-            background: var(--bg-white);
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        .cta-section p {
-            font-size: 1.125rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--text-dark);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-        }
-
-        .footer-bottom {
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0.7;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.125rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .features-grid,
-            .solutions-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>Qi Life Store - World's #1 Frequency Technology Since 2017</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <p>Black Friday Deals Worth Up To $2,190 — While Supplies Last</p>
+    </div>
+
     <!-- Navigation -->
-    <nav>
+    <nav class="main-nav">
         <div class="nav-container">
-            <div class="logo">Scalar</div>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#solutions">Solutions</a></li>
-                <li><a href="#opportunities">Opportunities</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <div class="nav-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <a href="#" class="logo">Qi Life Store</a>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Book Consultation</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Technology <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Qi Coil™ Systems</a></li>
+                        <li><a href="#">Qi Coil™ Rife & PEMF Therapy</a></li>
+                        <li><a href="#">Qi Coil Aura™ for Homes</a></li>
+                        <li><a href="#">Qi Coil Aura™ for Practitioners</a></li>
+                        <li><a href="#">Resonant Console™ Tablet</a></li>
+                        <li><a href="#">Compare Systems</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Frequencies <span class="dropdown-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Most Popular</a></li>
+                        <li><a href="#">Rife+</a></li>
+                        <li><a href="#">Quantum</a></li>
+                        <li><a href="#">Higher Quantum</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Partner With Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Transformations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Learn</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Community</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Help</a>
+                </li>
             </ul>
+            
+            <div class="nav-right">
+                <button class="search-btn" id="searchBtn">🔍</button>
+                <a href="#" class="btn-primary-nav">Log in</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Defining the Future of Technology</h1>
-            <p>Scalar Technologies delivers cutting-edge solutions for enterprise data management, AI transformation, and sustainable innovation. Join the revolution.</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Get Started</a>
-                <a href="#features" class="btn btn-secondary">Learn More</a>
+    <!-- Hero Carousel -->
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <div class="hero-content">
+                    <h1>Receive Up To $2,190 in Free Gifts</h1>
+                    <p>While Supplies Lasts - December 2, 2025 PST</p>
+                    <a href="#" class="btn-hero">Claim Your Free Gift Pack</a>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <div class="hero-content">
+                    <h1>Accelerate Your Healing Journey</h1>
+                    <p>Enhance Sleep Quality, Energy & Mood With Soothing Qi Energy</p>
+                    <a href="#" class="btn-hero">Discover Qi Coil™ PEMF & RIFE THERAPY</a>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <div class="hero-content">
+                    <h1>100% Success Rate with 25 Qi Coil Users</h1>
+                    <p>In As Fast As 0.43 Weeks</p>
+                    <a href="#" class="btn-hero">View Clinical Study</a>
+                </div>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
+    <!-- Trust Badges -->
+    <section class="trust-badges">
         <div class="container">
-            <div class="section-header">
-                <h2>Why Choose Scalar?</h2>
-                <p>We provide innovative solutions that drive digital transformation and sustainable growth</p>
+            <div class="badge-item">
+                <span class="badge-icon">⚡</span>
+                <p>World's #1 Frequency Technology Since 2017</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">💾</div>
-                    <h3>Advanced Data Management</h3>
-                    <p>ScalarDB and ScalarDL ensure data consistency and reliability across distributed systems, enabling ACID transactions and immutable data records.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3>AI & Machine Learning</h3>
-                    <p>Deploy cutting-edge AI solutions, LLM implementations, and RAG systems to transform your business with intelligent automation.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🌱</div>
-                    <h3>Sustainable Innovation</h3>
-                    <p>Decarbonization technologies and renewable energy solutions to help businesses achieve Net Zero Carbon emissions.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Enterprise Solutions</h3>
-                    <p>Industry-specific Salesforce solutions, fleet orchestration platforms, and government IT services tailored to your needs.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Secure & Reliable</h3>
-                    <p>Enterprise-grade security and compliance for government, financial services, and critical infrastructure applications.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Real-Time Processing</h3>
-                    <p>Real-time machine learning platforms and streaming data processing for instant insights and decision-making.</p>
-                </div>
+            <div class="badge-item">
+                <span class="badge-icon">✓</span>
+                <p>Clinically Proven</p>
+            </div>
+            <div class="badge-item">
+                <span class="badge-icon">✓</span>
+                <p>Results in 30 Days Guaranteed</p>
             </div>
         </div>
     </section>
 
-    <!-- Solutions Section -->
-    <section class="solutions" id="solutions">
+    <!-- Free Gift Section -->
+    <section class="free-gift-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Our Solutions</h2>
-                <p>Comprehensive technology solutions across multiple industries</p>
-            </div>
-            <div class="solutions-grid">
-                <div class="solution-card">
-                    <h3>Data Management</h3>
-                    <ul>
-                        <li>Distributed Database Systems</li>
-                        <li>Microservices Integration</li>
-                        <li>Legacy System Modernization</li>
-                        <li>ACID Transaction Support</li>
-                    </ul>
+            <h2>Receive Up To $2,190 in Free Gifts</h2>
+            <p class="subtitle">While Supplies Last</p>
+            <div class="gift-grid">
+                <div class="gift-item">
+                    <div class="gift-image">FREE</div>
+                    <p>1 Random Qi Tones</p>
                 </div>
-                <div class="solution-card">
-                    <h3>AI & Analytics</h3>
-                    <ul>
-                        <li>LLM Implementation</li>
-                        <li>RAG Systems</li>
-                        <li>Data Lake Management</li>
-                        <li>Real-Time ML Platforms</li>
-                    </ul>
+                <div class="gift-item">
+                    <div class="gift-image">FREE</div>
+                    <p>Qi Radiance Set + 1 Qi Tones</p>
                 </div>
-                <div class="solution-card">
-                    <h3>Enterprise Software</h3>
-                    <ul>
-                        <li>Salesforce Solutions</li>
-                        <li>CRM Optimization</li>
-                        <li>Contact Center Solutions</li>
-                        <li>Custom Development</li>
-                    </ul>
+                <div class="gift-item">
+                    <div class="gift-image">FREE</div>
+                    <p>Qi Coil Mini + Qi Radiance + 1 Random Qi Tones</p>
                 </div>
-                <div class="solution-card">
-                    <h3>Fleet Management</h3>
-                    <ul>
-                        <li>AI-Based Optimization</li>
-                        <li>Route Planning</li>
-                        <li>Autonomous Integration</li>
-                        <li>Real-Time Decision Making</li>
-                    </ul>
-                </div>
-                <div class="solution-card">
-                    <h3>Sustainability</h3>
-                    <ul>
-                        <li>Renewable Energy</li>
-                        <li>EV Infrastructure</li>
-                        <li>Carbon Offsetting</li>
-                        <li>Energy Storage</li>
-                    </ul>
-                </div>
-                <div class="solution-card">
-                    <h3>Government IT</h3>
-                    <ul>
-                        <li>Cybersecurity Solutions</li>
-                        <li>Cloud Transformations</li>
-                        <li>Enterprise Networks</li>
-                        <li>System Architecture</li>
-                    </ul>
+                <div class="gift-item">
+                    <div class="gift-image">FREE</div>
+                    <p>Qiari Ultra + Qi Coil Mini + Qi Radiance + 1 Random Qi Tones</p>
                 </div>
             </div>
+            <a href="#" class="btn-primary-large">Claim Your Free Gift Pack</a>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
+    <!-- Best Sellers -->
+    <section class="best-sellers">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>$11M+</h3>
-                    <p>Series A Funding</p>
+            <h2 class="section-title">Best Sellers</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <span class="product-badge entry">Entry Level</span>
+                    <div class="product-image">Qi Coil™ Mini</div>
+                    <h3>Qi Coil™ Mini System - Mobile Rife & PEMF Therapy</h3>
+                    <p class="product-price">$649</p>
+                    <p class="product-desc">Personal wellness, portable and beginner-friendly</p>
+                    <button class="btn-add-cart">Add to cart</button>
+                    <a href="#" class="product-link">View Details</a>
                 </div>
-                <div class="stat-item">
-                    <h3>10+</h3>
-                    <p>Technology Solutions</p>
+                <div class="product-card featured">
+                    <span class="product-badge popular">Most Popular</span>
+                    <div class="product-image">Qi Coil™ 3S</div>
+                    <h3>Qi Coil™ 3S System with Resonant Console 2</h3>
+                    <p class="product-price">$4,995</p>
+                    <p class="product-desc">Balanced power and value for daily full-body therapy</p>
+                    <button class="btn-add-cart">Add to cart</button>
+                    <a href="#" class="product-link">View Details</a>
                 </div>
-                <div class="stat-item">
-                    <h3>500+</h3>
-                    <p>Enterprise Clients</p>
+                <div class="product-card">
+                    <span class="product-badge clinic">Clinic Ready</span>
+                    <div class="product-image">Qi Coil™ Max</div>
+                    <h3>Qi Coil™ Max Scalar System with Resonant Console 3</h3>
+                    <p class="product-price">$9,995</p>
+                    <p class="product-desc">Immersive scalar field and peak energetic performance</p>
+                    <button class="btn-add-cart">Add to cart</button>
+                    <a href="#" class="product-link">View Details</a>
                 </div>
-                <div class="stat-item">
-                    <h3>Global</h3>
-                    <p>Worldwide Presence</p>
+                <div class="product-card">
+                    <span class="product-badge ultimate">Ultimate Experience</span>
+                    <div class="product-image">Qi Coil™ Aura</div>
+                    <h3>Qi Coil™ Aura Scalar System with Resonant Console Advanced</h3>
+                    <p class="product-price">$16,995</p>
+                    <p class="product-desc">Advanced scalar immersion and peak energetic performance for wellness environments</p>
+                    <button class="btn-add-cart">Add to cart</button>
+                    <a href="#" class="product-link">View Details</a>
                 </div>
             </div>
+            <a href="#" class="compare-link">Compare Qi Coil Systems</a>
         </div>
     </section>
 
-    <!-- Opportunities Section -->
-    <section class="features" id="opportunities">
+    <!-- How It Works -->
+    <section class="how-it-works">
         <div class="container">
-            <div class="section-header">
-                <h2>Key Opportunities</h2>
-                <p>Partner with Scalar to unlock growth and innovation</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🏢</div>
-                    <h3>Enterprise Transformation</h3>
-                    <p>Modernize legacy systems and integrate data across microservices with our advanced data management solutions.</p>
+            <h2 class="section-title">Accelerate Your Healing Journey</h2>
+            <p class="section-subtitle">Qi Coils harness the power of quantum energy to transform your well-being. Listen to soothing frequencies that uplift your mood, while the coils silently convert sound into magnetic energy to recharge your cells. This advanced technology supports faster regeneration, pain management, toxin elimination, and promotes longevity, helping you feel revitalized and balanced.</p>
+            <div class="how-it-works-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3>Listen to Frequencies</h3>
+                    <p>Soothing frequencies uplift your mood</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💡</div>
-                    <h3>AI Adoption</h3>
-                    <p>Deploy AI tools and LLM systems to address business challenges and unlock new capabilities.</p>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3>Energy Conversion</h3>
+                    <p>Coils convert sound into magnetic energy</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🌍</div>
-                    <h3>Sustainability Goals</h3>
-                    <p>Achieve Net Zero Carbon emissions with our decarbonization technologies and renewable energy solutions.</p>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3>Cell Recharge</h3>
+                    <p>Magnetic energy recharges your cells</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h3>Transformation</h3>
+                    <p>Feel revitalized and balanced</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section" id="contact">
+    <!-- Testimonials -->
+    <section class="testimonials">
         <div class="container">
-            <h2>Ready to Transform Your Business?</h2>
-            <p>Join leading enterprises that trust Scalar Technologies for their digital transformation journey.</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary" style="background: var(--gradient); color: white;">Contact Us</a>
-                <a href="#solutions" class="btn btn-secondary" style="border-color: var(--primary-color); color: var(--primary-color);">View Solutions</a>
+            <h2 class="section-title">Recommended By Leaders</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-image">Dr. Joe Vitale</div>
+                    <h4>Dr. Joe Vitale</h4>
+                    <p class="testimonial-role">Featured in "The Secret" movie</p>
+                    <p class="testimonial-text">"David's technology is simply incredible! I've experienced remarkable results beyond my expectations in less than 24 hours. I'm truly astounded and a fan"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-image">Kevin Harrington</div>
+                    <h4>Kevin Harrington</h4>
+                    <p class="testimonial-role">As Seen on "Shark Tank"</p>
+                    <p class="testimonial-text">"David Wong's Qi Coils are a game-changer in the innovation is unmatched, and i'm thrilled to incorporate them into my daily life."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-image">Dr. Fab Mancini</div>
+                    <h4>Dr. Fab Mancini</h4>
+                    <p class="testimonial-role">Ex-President of Parker Chiropractic University</p>
+                    <p class="testimonial-text">"When it comes to frequency healing, David is the leading expert. His Qi Coils is one of the best wellness tools I use daily."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="customer-reviews">
+        <div class="container">
+            <div class="review-item">
+                <p class="review-text">"I felt that have <strong>excess energy</strong> to the point that I had an exercise in the morning but I need to move or do anything because there is a lot of energy in my body. I saw the effects in the amount of time."</p>
+                <p class="review-author">— Vanessa Gutierrez, Entrepreneur, Holistic Business Coach</p>
+            </div>
+            <div class="review-item">
+                <p class="review-text">"I was in three severe accidents and had metal implants in my shoulder. The Qi Coil has been a game-changer for me. It's already reducing my pain, and I've only been using it for a few weeks."</p>
+            </div>
+            <div class="review-item">
+                <p class="review-text">"From normalizing diabetic Sugar levels to reducing skin cancer irritations and even assisting a neighbor's dog with bladder cancer, Qi Coils enhance overall well-being, offering increased energy, better relaxation, and improved sleep quality-a genuine game-changer."</p>
+                <p class="review-author">— Dr. Thomas Brewer, PhD, Chemist</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Quantum Energy & Beauty Essentials</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">Qi Tones™</div>
+                    <h3>Qi Tones™ Therapy System Value Bundle</h3>
+                    <p class="product-price">$695</p>
+                    <button class="btn-add-cart">Add to cart</button>
+                    <a href="#" class="product-link">View Details</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Qi Tones™</div>
+                    <h3>Qi Tones™ Therapy System: Abundance Starter Pack</h3>
+                    <p class="product-price"><span class="old-price">$399</span> $197</p>
+                    <button class="btn-add-cart">Add to cart</button>
+                    <a href="#" class="product-link">View Details</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Qi Wand™</div>
+                    <h3>Qi Wand™ Transformation Set</h3>
+                    <p class="product-price"><span class="old-price">$2,495</span> $1,495</p>
+                    <button class="btn-add-cart">Add To Cart</button>
+                    <a href="#" class="product-link">View Details</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Qi Wand™</div>
+                    <h3>Qi Wand™ Diamond Edition Set</h3>
+                    <p class="product-price"><span class="old-price">$4,995</span> $3,495</p>
+                    <button class="btn-add-cart">Add To Cart</button>
+                    <a href="#" class="product-link">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformations -->
+    <section class="transformations">
+        <div class="container">
+            <h2 class="section-title">Choose Your Transformation</h2>
+            <div class="transformation-tags">
+                <span class="tag">Weight Loss</span>
+                <span class="tag">Skin Radiance</span>
+                <span class="tag">Abundance</span>
+                <span class="tag">Superbrain</span>
+                <span class="tag">Biohacking</span>
+                <span class="tag">Longevity</span>
+                <span class="tag">Clinical Wellness</span>
+                <span class="tag">Comfort & Recovery</span>
+                <span class="tag">Holistic Resilience</span>
+                <span class="tag">Feng Shui</span>
+            </div>
+            <a href="#" class="view-all-link">View All</a>
+        </div>
+    </section>
+
+    <!-- Business Opportunities -->
+    <section class="business-opportunities">
+        <div class="container">
+            <div class="opportunity-grid">
+                <div class="opportunity-card">
+                    <h3>Build a Wellness Business</h3>
+                    <p>Backed by Breakthrough Frequency Technology</p>
+                    <a href="#" class="btn-secondary">Get ROI Projection</a>
+                </div>
+                <div class="opportunity-card">
+                    <h3>Whole Home PEMF Therapy</h3>
+                    <p>EMF Protection for Entire Home</p>
+                    <a href="#" class="btn-secondary">Discover More</a>
+                </div>
+                <div class="opportunity-card">
+                    <h3>Elevate Your Clinic's Wellness</h3>
+                    <p>With 6 Tesla Inspired Technologies</p>
+                    <a href="#" class="btn-secondary">Discover More</a>
+                </div>
+                <div class="opportunity-card">
+                    <h3>The Ultimate Frequency Experience</h3>
+                    <p>Discover Qi Resonance™ Medbed</p>
+                    <a href="#" class="btn-secondary">Discover More</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#features">Features</a>
-                <a href="#solutions">Solutions</a>
-                <a href="#opportunities">Opportunities</a>
-                <a href="https://scalar-labs.com" target="_blank">About</a>
-                <a href="#contact">Contact</a>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Qi Life Store</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Join Our Team</a></li>
+                        <li><a href="#">Qi Life Community</a></li>
+                        <li><a href="#">Affiliate Program</a></li>
+                        <li><a href="#">Affiliate Login</a></li>
+                        <li><a href="#">Qi Life Business Opportunities</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms and Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Financing</a></li>
+                        <li><a href="#">Media</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Qi Coil Setup Tutorials</a></li>
+                        <li><a href="#">Apps</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Book Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Social</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <p><strong>Disclaimer:</strong> The products and information on this website are not intended to diagnose, treat, cure, or prevent any disease, nor have they been evaluated by the FDA. Individual results may vary, and testimonials reflect personal experiences, not typical outcomes. Always consult a healthcare provider before changing or stopping any medication.</p>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Scalar Technologies. All rights reserved.</p>
+                <p>&copy; 2025, Qi Life Store | Qi Resonance Technologies LLC</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll effect to navigation
-        let lastScroll = 0;
-        const nav = document.querySelector('nav');
-        
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
-            } else {
-                nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Animate stats on scroll
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statNumbers = entry.target.querySelectorAll('.stat-item h3');
-                    statNumbers.forEach(stat => {
-                        const target = stat.textContent;
-                        if (target.includes('$') || target.match(/\d+/)) {
-                            stat.style.animation = 'fadeInUp 0.8s ease-out';
-                        }
-                    });
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.stats').forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-
