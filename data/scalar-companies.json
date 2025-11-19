@@ -1,0 +1,324 @@
+{
+  "companies": [
+    {
+      "id": "scalar-inc",
+      "name": "Scalar, Inc.",
+      "slug": "scalar-inc",
+      "website": "https://scalar-labs.com",
+      "founded": "December 2017",
+      "founders": ["Wataru Fukatsu (CEO)", "Hiroyuki Yamada (CTO)"],
+      "location": "Japan (with U.S. subsidiary)",
+      "vision": "Define the Future of Data Management",
+      "category": "data",
+      "industry": "Enterprise Data Management",
+      "technologyFocus": "Distributed Databases",
+      "growthStage": "Series A ($11M)",
+      "products": [
+        "ScalarDB: Distributed database ensuring ACID transactions across multiple databases",
+        "ScalarDL: Distributed ledger/blockchain platform for immutable data records"
+      ],
+      "keyFeatures": [
+        "Data consistency and reliability",
+        "Legacy system modernization",
+        "Microservices data integration",
+        "ACID transaction support across distributed systems"
+      ],
+      "industriesServed": ["Finance", "Manufacturing", "Logistics", "Retail"],
+      "investment": {
+        "seriesA": "1.5 billion yen (~$11M USD)",
+        "year": "2022",
+        "status": "Expanding globally with U.S. subsidiary"
+      },
+      "opportunities": [
+        "Enterprise Digital Transformation: Help organizations modernize legacy systems",
+        "Microservices Architecture: Enable data consistency across distributed systems",
+        "Financial Services: Provide reliable transaction processing for fintech companies",
+        "E-commerce: Support high-volume transaction processing for retail platforms"
+      ]
+    },
+    {
+      "id": "zf-scalar",
+      "name": "ZF SCALAR Platform",
+      "slug": "zf-scalar",
+      "website": "https://zf-scalar.com",
+      "founded": "N/A",
+      "founders": [],
+      "location": "Global",
+      "parentCompany": "ZF Friedrichshafen AG (Commercial Vehicle Solutions)",
+      "type": "Digital fleet orchestration platform",
+      "category": "fleet",
+      "industry": "Fleet Management",
+      "technologyFocus": "AI/ML, IoT",
+      "growthStage": "Enterprise",
+      "capabilities": [
+        "Real-time fleet optimization",
+        "AI-based automated decision-making",
+        "Planning, routing, scheduling, and dispatching",
+        "Integration with autonomous driving technologies",
+        "End-to-end intelligent systems"
+      ],
+      "targetMarkets": [
+        "Freight logistics",
+        "Passenger transportation",
+        "Commercial fleet operators",
+        "Smart cities"
+      ],
+      "opportunities": [
+        "Logistics Companies: Optimize route planning and fleet utilization",
+        "Smart City Initiatives: Integrate with urban transportation systems",
+        "Autonomous Vehicle Integration: Prepare for future autonomous fleet operations",
+        "Sustainability: Reduce fuel consumption and emissions through optimization"
+      ]
+    },
+    {
+      "id": "scalar-crm",
+      "name": "Scalar Technologies (CRM)",
+      "slug": "scalar-crm",
+      "website": "https://scalarcrm.com",
+      "founded": "N/A",
+      "founders": [],
+      "location": "N/A",
+      "status": "Currently in stealth mode",
+      "category": "enterprise",
+      "industry": "CRM Solutions",
+      "technologyFocus": "Salesforce Platform",
+      "growthStage": "Stealth",
+      "services": [
+        "Custom Salesforce development",
+        "Implementation services",
+        "Consulting and optimization",
+        "Industry-specific solutions"
+      ],
+      "industries": ["Contact centers", "Financial services", "Retail"],
+      "opportunities": [
+        "Salesforce Optimization: Maximize ROI on Salesforce investments",
+        "Industry Customization: Tailored solutions for specific verticals",
+        "Digital Transformation: Modernize customer relationship management",
+        "Contact Center Enhancement: Improve customer engagement and service quality"
+      ]
+    },
+    {
+      "id": "scalar-international",
+      "name": "Scalar International",
+      "slug": "scalar-international",
+      "website": "https://scalarintl.com",
+      "founded": "N/A",
+      "founders": [],
+      "location": "N/A",
+      "focus": "Low-carbon technology investments",
+      "mission": "Help businesses achieve Net Zero Carbon emissions",
+      "category": "energy",
+      "industry": "Clean Energy",
+      "technologyFocus": "Renewable Energy",
+      "growthStage": "Growing",
+      "services": [
+        "Energy management systems",
+        "Renewable energy investments",
+        "Sustainable mobility solutions",
+        "Carbon offsetting strategies",
+        "Energy storage solutions",
+        "Electric vehicle infrastructure (Scalar EV Park)"
+      ],
+      "opportunities": [
+        "ESG Investments: Attractive for ESG-focused investors",
+        "Corporate Sustainability: Help companies meet carbon reduction goals",
+        "Energy Transition: Support businesses transitioning to renewable energy",
+        "EV Infrastructure: Develop charging networks for electric vehicles",
+        "Regulatory Compliance: Assist with carbon reporting and compliance"
+      ]
+    },
+    {
+      "id": "scalar-cz",
+      "name": "Scalar Technologies s.r.o.",
+      "slug": "scalar-cz",
+      "website": "https://scalar-technologies.net",
+      "founded": "2021",
+      "founders": [],
+      "location": "Czech Republic",
+      "focus": "Software development and scientific research",
+      "category": "services",
+      "industry": "Software Development",
+      "technologyFocus": "ML, Mobile, Web",
+      "growthStage": "Early Stage",
+      "services": [
+        "Mobile application development",
+        "Web resource development",
+        "Machine learning model development",
+        "End-to-end product support"
+      ],
+      "opportunities": [
+        "Software Development: Custom application development services",
+        "Machine Learning: ML model development and deployment",
+        "Research Collaboration: Scientific research partnerships",
+        "Product Development: Full-cycle product development services"
+      ]
+    },
+    {
+      "id": "scalar-ml-platform",
+      "name": "SCALAR ML Platform",
+      "slug": "scalar-ml-platform",
+      "website": "https://www.theoj.org/joss-papers/joss.02676/10.21105.joss.02676.pdf",
+      "founded": "N/A",
+      "founders": [],
+      "location": "Open Source",
+      "type": "Open-source platform for ML competitions",
+      "technology": "Python-based, uses Apache Kafka and Apache Spark",
+      "focus": "Real-time machine learning on data streams",
+      "category": "ai",
+      "industry": "Research/Education",
+      "technologyFocus": "ML/AI",
+      "growthStage": "Open Source",
+      "capabilities": [
+        "Classification problems on data streams",
+        "Regression problems on data streams",
+        "Real-time ML competition hosting",
+        "Streaming data processing"
+      ],
+      "useCases": [
+        "IEEE Big Data Cup Challenges",
+        "Real-time ML research",
+        "Streaming data analysis competitions"
+      ],
+      "opportunities": [
+        "Research Institutions: Host ML competitions and research",
+        "Data Science: Test methodologies on streaming data",
+        "Industry Applications: Real-time anomaly detection, fraud detection",
+        "Education: Teaching real-time ML concepts"
+      ]
+    },
+    {
+      "id": "scalar-dev",
+      "name": "Scalar.dev",
+      "slug": "scalar-dev",
+      "website": "https://scalar.dev",
+      "founded": "N/A",
+      "founders": [],
+      "location": "UK",
+      "focus": "AI deployment and data solutions",
+      "category": "ai",
+      "industry": "AI Consultancy",
+      "technologyFocus": "AI/LLM",
+      "growthStage": "Growing",
+      "services": [
+        "AI tool deployment for business challenges",
+        "Data lake and pipeline management",
+        "Large Language Model (LLM) implementation",
+        "Retrieval Augmented Generation (RAG) systems",
+        "Bespoke development solutions"
+      ],
+      "opportunities": [
+        "AI Transformation: Help businesses adopt AI technologies",
+        "Data Infrastructure: Build scalable data platforms",
+        "LLM Integration: Implement RAG systems for enterprise knowledge",
+        "Cloud-Native Solutions: Deploy cloud-based AI infrastructure"
+      ]
+    },
+    {
+      "id": "scalar-dcs",
+      "name": "Scalar DCS",
+      "slug": "scalar-dcs",
+      "website": "https://scalardcs.com",
+      "founded": "N/A",
+      "founders": [],
+      "location": "USA",
+      "type": "Service-Disabled Veteran-Owned Small Business (SDVOSB)",
+      "focus": "Government and education IT solutions",
+      "category": "enterprise",
+      "industry": "Government IT",
+      "technologyFocus": "Cybersecurity, Cloud",
+      "growthStage": "Established",
+      "services": [
+        "Cybersecurity solutions",
+        "Enterprise networks",
+        "System operations",
+        "Systems architecture",
+        "Data storage solutions",
+        "Cloud transformations"
+      ],
+      "clients": [
+        "Department of Defense",
+        "Department of State",
+        "Educational institutions",
+        "Commercial companies"
+      ],
+      "opportunities": [
+        "Government Contracts: SDVOSB status provides contracting advantages",
+        "Cybersecurity: Growing demand for secure IT solutions",
+        "Cloud Migration: Help agencies modernize infrastructure",
+        "Education Technology: Support educational institutions' IT needs"
+      ]
+    },
+    {
+      "id": "scalar-io",
+      "name": "Scalar.io",
+      "slug": "scalar-io",
+      "website": "https://scalar.io",
+      "founded": "N/A",
+      "founders": [],
+      "location": "N/A",
+      "focus": "Financial valuation services",
+      "category": "services",
+      "industry": "Financial Services",
+      "technologyFocus": "Valuation",
+      "growthStage": "Established",
+      "services": [
+        "409A valuations",
+        "Portfolio valuation",
+        "Purchase price allocation",
+        "Gift and estate valuations",
+        "Fairness opinions",
+        "Derivatives valuation",
+        "Transfer pricing"
+      ],
+      "opportunities": [
+        "Startup Ecosystem: 409A valuations for equity compensation",
+        "M&A Transactions: Purchase price allocation services",
+        "Tax Planning: Gift and estate valuations",
+        "Financial Advisory: Fairness opinions for transactions"
+      ]
+    },
+    {
+      "id": "scalar-tech",
+      "name": "Scalar Tech",
+      "slug": "scalar-tech",
+      "website": "https://scalar-tech.co",
+      "founded": "N/A",
+      "founders": [],
+      "location": "N/A",
+      "focus": "Digital marketing strategies",
+      "category": "services",
+      "industry": "Digital Marketing",
+      "technologyFocus": "Marketing Tech",
+      "growthStage": "Growing",
+      "services": [
+        "Search Engine Optimization (SEO)",
+        "Search Engine Marketing (SEM)",
+        "Email marketing campaigns",
+        "Social media marketing",
+        "Customized digital solutions"
+      ],
+      "opportunities": [
+        "Small Businesses: Affordable digital marketing solutions",
+        "E-commerce: Drive online sales through digital channels",
+        "Brand Visibility: Increase online presence and reach",
+        "Lead Generation: Generate qualified leads through digital campaigns"
+      ]
+    },
+    {
+      "id": "scalar-sh",
+      "name": "Scalar.sh",
+      "slug": "scalar-sh",
+      "website": "https://scalar.sh",
+      "founded": "N/A",
+      "founders": [],
+      "location": "Boulder, Colorado",
+      "focus": "Automatic cloud application scaling",
+      "category": "data",
+      "industry": "Cloud Infrastructure",
+      "technologyFocus": "Cloud Scaling",
+      "growthStage": "Growing",
+      "description": "Solutions for automatically scaling web cloud applications, adjusting server resources based on traffic demands"
+    }
+  ]
+}
+
